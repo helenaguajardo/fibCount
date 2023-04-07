@@ -1,0 +1,37 @@
+def fibCount():
+    ar = [0]*20001
+    ar[0] = 0
+    ar[1] = 1
+    ind = 2
+    num = 0
+    counts = [0]*9
+    while ind < 20001:
+        num = ar[ind-1] + ar[ind-2]
+        ar[ind] = num
+        first = int(str(num)[0])
+        if first == 1:
+           counts[0] += 1
+        elif first == 2:
+            counts[1] += 1
+        elif first == 3:
+            counts[2] += 1
+        elif first == 4:
+            counts[3] += 1
+        elif first == 5:
+            counts[4] += 1
+        elif first == 6:
+            counts[5] += 1
+        elif first == 7:
+            counts[6] += 1
+        elif first == 8:
+            counts[7] += 1
+        elif first == 9:
+            counts[8] += 1
+        ind += 1
+    uh = ar[20000] / ar[19999]
+    #hm = ar[20000] / (2.25 * (10 ^ 20000))
+    return uh, ar[20000], counts
+        
+    
+
+print(fibCount())
